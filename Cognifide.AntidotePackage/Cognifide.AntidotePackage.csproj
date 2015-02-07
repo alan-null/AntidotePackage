@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C08C6A1F-7A55-4023-AA79-06DCAEB7CCA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cognifide.AntidotePackage</RootNamespace>
+    <AssemblyName>Cognifide.AntidotePackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update">
+      <HintPath>Libraries\Sitecore.Update.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Zip">
+      <HintPath>Libraries\Sitecore.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\IdExtensions.cs" />
+    <Compile Include="Models\Package\AntidotePackageDefinition.cs" />
+    <Compile Include="Models\Package\AttributesContainer.cs" />
+    <Compile Include="Models\SourceStatus.cs" />
+    <Compile Include="Utils\AntidotePackageInstallationPostStep.cs" />
+    <Compile Include="CustomInstallPackageForm.cs" />
+    <Compile Include="Extensions\FileInfoExtensions.cs" />
+    <Compile Include="Extensions\ItemExtensions.cs" />
+    <Compile Include="Extensions\ZipEntryExtensions.cs" />
+    <Compile Include="Install\Zip\AntidotePackageReader.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\AntidotePackagePipelineArgs.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\IAntidotePackagePipelineProcessor.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AddExistingSources.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AttachNonExistingSourcesInfo.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AddMetadata.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AddPostInstallationFiles.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\CategorizeSources.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GeneratePackageProject.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GenerateAntidotePackage.cs" />
+    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GetAntidotePackageSources.cs" />
+    <Compile Include="Models\AntidoteFileSourceDefinition.cs" />
+    <Compile Include="Models\AntidoteItemSourceDefinition.cs" />
+    <Compile Include="Models\IAntidoteSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\Sitecore.Client.dll" />
+    <Content Include="Libraries\Sitecore.Kernel.dll" />
+    <Content Include="sitecore\shell\Applications\Install\Dialogs\Install package\Custom Install Package.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App_Config\Include\Cognifide.AntidotePackage.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
