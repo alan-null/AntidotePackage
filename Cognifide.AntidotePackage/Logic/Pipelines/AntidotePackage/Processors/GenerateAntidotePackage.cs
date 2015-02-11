@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Web.Hosting;
 using Sitecore;
 using Sitecore.Install;
@@ -11,13 +12,23 @@ namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
     {
         public void Process(AntidotePackagePipelineArgs args)
         {
-            string packagePath = Path.Combine(HostingEnvironment.ApplicationHost.GetPhysicalPath(), "alan.zip"); ;
+            string antidodeFolderPath = Sitecore.Configuration.Settings.PackagePath + "\\Antidote packages";
+            CheckAntidoteFolderPath(antidodeFolderPath);
+            string packagePath = Path.Combine(antidodeFolderPath, String.Format("Antidote for {0}", args.AntidotePackageProject.Name)); ;
             ISink<PackageEntry> writer = new PackageWriter(packagePath);
             ITaskOutput output = new DefaultOutput();
             writer.Initialize(new SimpleProcessingContext(output));
             PackageGenerator.GeneratePackage(args.AntidotePackageProject, writer);
 
             Context.ClientPage.ClientResponse.Alert("Antidote package generated");
+        }
+
+        private void CheckAntidoteFolderPath(string antidodeFolderPath)
+        {
+            if (!Directory.Exists(antidodeFolderPath))
+            {
+                Directory.CreateDirectory(antidodeFolderPath);
+            }
         }
     }
 }

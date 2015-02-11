@@ -3,18 +3,15 @@ using Sitecore;
 using Sitecore.Diagnostics;
 using Sitecore.IO;
 using Sitecore.Install;
-using Sitecore.Install.Framework;
 using Sitecore.Pipelines;
 using Sitecore.Shell.Applications.Install.Dialogs.InstallPackage;
 using Sitecore.Web.UI.Sheer;
+using System;
 
 namespace Cognifide.AntidotePackage
 {
     public class CustomInstallPackageForm : InstallPackageForm
     {
-        private IProcessingContext _ctx;
-
-        /// <param name="message">The message.</param>
         [HandleMessage("installer:startInstallation")]
         protected new void StartInstallation(Message message)
         {
@@ -25,15 +22,19 @@ namespace Cognifide.AntidotePackage
 
                 var args = new AntidotePackagePipelineArgs()
                     {
-                        SourcePackagePath = filename
+                        SourcePackagePath = filename,
+                        AntidotePackageProject = new PackageProject { Name = PackageFile.Value }
                     };
                 CorePipeline.Run("GenerateAntidotePackage", args);
+                Sitecore.Shell.Framework.Windows.Close();
             }
             else
             {
                 Context.ClientPage.ClientResponse.Alert("Package not found");
                 this.Active = "Ready";
+                this.Cancel();
                 this.BackButton.Disabled = true;
+                this.EndWizard();
             }
         }
     }

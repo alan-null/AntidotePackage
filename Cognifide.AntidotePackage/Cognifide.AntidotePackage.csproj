@@ -80,7 +80,6 @@
     <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AddMetadata.cs" />
     <Compile Include="Logic\Pipelines\AntidotePackage\Processors\AddPostInstallationFiles.cs" />
     <Compile Include="Logic\Pipelines\AntidotePackage\Processors\CategorizeSources.cs" />
-    <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GeneratePackageProject.cs" />
     <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GenerateAntidotePackage.cs" />
     <Compile Include="Logic\Pipelines\AntidotePackage\Processors\GetAntidotePackageSources.cs" />
     <Compile Include="Models\AntidoteFileSourceDefinition.cs" />
@@ -91,9 +90,7 @@
   <ItemGroup>
     <Content Include="Libraries\Sitecore.Client.dll" />
     <Content Include="Libraries\Sitecore.Kernel.dll" />
-    <Content Include="sitecore\shell\Applications\Install\Dialogs\Install package\Custom Install Package.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="sitecore\shell\Applications\Install\Dialogs\Install package\Antidote Package.xml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
