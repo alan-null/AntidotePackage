@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Permissions;
-using Cognifide.AntidotePackage.Extensions;
 using Cognifide.AntidotePackage.Models;
 using Cognifide.AntidotePackage.Models.Package;
 using Newtonsoft.Json;
@@ -37,8 +36,11 @@ namespace Cognifide.AntidotePackage.Utils
         {
             foreach (var definition in itemsId)
             {
-                Item item = definition.ItemId.GetItem();
-                item.Delete();
+                Item item = definition.GetItem();
+                if (item != null)
+                {
+                    item.Delete();
+                }
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using Cognifide.AntidotePackage.Install;
-using Cognifide.AntidotePackage.Models;
+﻿using Cognifide.AntidotePackage.Models;
 using Cognifide.AntidotePackage.Models.Package;
 using Newtonsoft.Json;
 

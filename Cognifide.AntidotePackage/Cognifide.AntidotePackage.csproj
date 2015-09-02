@@ -63,12 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\IdExtensions.cs" />
+    <Compile Include="Dialogs.cs" />
     <Compile Include="Models\Package\AntidotePackageDefinition.cs" />
     <Compile Include="Models\Package\AttributesContainer.cs" />
     <Compile Include="Models\SourceStatus.cs" />
     <Compile Include="Utils\AntidotePackageInstallationPostStep.cs" />
-    <Compile Include="CustomInstallPackageForm.cs" />
+    <Compile Include="GenerateAntidotePackageForm.cs" />
     <Compile Include="Extensions\FileInfoExtensions.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\ZipEntryExtensions.cs" />
@@ -90,13 +90,16 @@
   <ItemGroup>
     <Content Include="Libraries\Sitecore.Client.dll" />
     <Content Include="Libraries\Sitecore.Kernel.dll" />
-    <Content Include="sitecore\shell\Applications\Install\Dialogs\Install package\Antidote Package.xml" />
+    <Content Include="sitecore\shell\Applications\AntidotePackage\Dialogs\Antidote Package.xml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="App_Config\Include\Cognifide.AntidotePackage.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Data\serialization\core\sitecore\content\Applications\Tools\AntidotePackage.item" />
+    <None Include="Data\serialization\core\sitecore\content\Documents and settings\All users\Start menu\Right\Development Tools\Antidote Package.item" />
+    <None Include="Data\serialization\core\sitecore\layout\Layouts\Tools\AntidotePackage.item" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

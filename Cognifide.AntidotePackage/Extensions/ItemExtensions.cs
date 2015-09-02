@@ -10,10 +10,10 @@ namespace Cognifide.AntidotePackage.Extensions
         {
             return new ItemSource
             {
-                Database = "master",
+                Database = item.Database.ToString(),
                 Root = item.Paths.Path,
                 Converter = converter,
-                SkipVersions = false,
+                SkipVersions = false
             };
         }
     }

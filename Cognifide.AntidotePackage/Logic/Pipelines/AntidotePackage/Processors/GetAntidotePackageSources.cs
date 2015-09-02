@@ -1,7 +1,7 @@
 using Cognifide.AntidotePackage.Install.Zip;
-using Sitecore.IO;
 using Sitecore.Install;
 using Sitecore.Install.Files;
+using Sitecore.IO;
 
 namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
 {

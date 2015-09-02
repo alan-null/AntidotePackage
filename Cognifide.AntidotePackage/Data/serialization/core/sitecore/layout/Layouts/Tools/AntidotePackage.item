@@ -2,8 +2,8 @@
 version: 1
 id: {31DD910A-B35A-4F4E-92E7-7F754F6805D9}
 database: core
-path: /sitecore/layout/Layouts/Tools/Installer/AntidotePackage
-parent: {14F9C5D4-6D2B-4489-AA60-E12AA1D615D7}
+path: /sitecore/layout/Layouts/Tools/AntidotePackage
+parent: {08B83149-FCDD-4690-BA05-1C5187A96A13}
 name: AntidotePackage
 master: {00000000-0000-0000-0000-000000000000}
 template: {1163DA83-B2EF-4381-BF09-B2FF714B1B3F}
@@ -13,9 +13,9 @@ templatekey: Xml layout
 field: {5851D498-15F9-4B1A-BB02-0B736C13AFE3}
 name: Control
 key: control
-content-length: 25
+content-length: 15
 
-Installer.AntidotePackage
+AntidotePackage
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -134,7 +134,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 5f4a2f3d-83b7-4bdf-a689-46c9f91b89f6
+revision: 38cc0780-1ed3-41d2-97d3-e596cfb239eb
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -163,14 +163,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5f4a2f3d-83b7-4bdf-a689-46c9f91b89f6
+38cc0780-1ed3-41d2-97d3-e596cfb239eb
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20150210T214647:635592016078144063Z
+20150902T171819Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -25,7 +25,7 @@ namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
 
             foreach (AntidoteItemSourceDefinition itemSourceDefinition in args.AntidotePackageDefinition.GetItemSources(SourceStatus.Existing))
             {
-                Item item = itemSourceDefinition.ItemId.GetItem();
+                Item item = itemSourceDefinition.GetItem();
                 ItemSource fileSource = item.GenerateItemSource(converter);
                 args.AntidotePackageProject.Sources.Add(fileSource);
             }

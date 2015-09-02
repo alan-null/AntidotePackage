@@ -13,9 +13,9 @@ templatekey: Application shortcut
 field: {8A1AC797-0304-4C50-AAAC-4D9DBBFF435F}
 name: Application
 key: application
-content-length: 141
+content-length: 131
 
-<link text="Package Designer" linktype="internal" url="/Applications/Tools/Installer/AntidotePackage" anchor="" title="" class="" target=""/>
+<link text="Antidote Package" linktype="internal" url="/Applications/Tools/AntidotePackage" anchor="" title="" class="" target=""/>
 ----field----
 field: {238A40DA-15F2-4412-B720-8F192FFA7491}
 name: Icon
@@ -183,7 +183,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: c9b51304-5f5f-4ba6-aaa8-6ac29a330927
+revision: cbd55095-13a3-4797-9545-7a6c85de3b92
 
 ----field----
 field: {C032DB76-CC34-4F8F-BE2D-D2FB35237AAB}
@@ -226,14 +226,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c9b51304-5f5f-4ba6-aaa8-6ac29a330927
+cbd55095-13a3-4797-9545-7a6c85de3b92
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20150210T175831:635591879113730000Z
+20150901T221016Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

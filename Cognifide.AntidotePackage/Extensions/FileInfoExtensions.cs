@@ -10,7 +10,7 @@ namespace Cognifide.AntidotePackage.Extensions
             var fileSource = new FileSource
             {
                 Root = fileInfo.FullName,
-                Converter = new FileToEntryConverter(),
+                Converter = new FileToEntryConverter()
             };
             return fileSource;
         }

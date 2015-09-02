@@ -1,4 +1,3 @@
-using Cognifide.AntidotePackage.Install;
 using Cognifide.AntidotePackage.Models.Package;
 using Sitecore.Install;
 using Sitecore.Pipelines;

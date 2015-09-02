@@ -2,8 +2,8 @@
 version: 1
 id: {B4DA6A26-9088-4558-A96D-E105A79E4F2A}
 database: core
-path: /sitecore/content/Applications/Tools/Installer/AntidotePackage
-parent: {6E72E7A5-3E6B-4502-B216-7D937AA74505}
+path: /sitecore/content/Applications/Tools/AntidotePackage
+parent: {96CC5932-B73D-4781-BE5C-85AA3DDDF45C}
 name: AntidotePackage
 master: {1F0770EA-8B77-4110-91AA-CC00DEE102DD}
 template: {EB06CEC0-5E2D-4DC4-875B-01ADCC577D13}
@@ -69,9 +69,9 @@ People/32x32/box_new.png
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
-content-length: 1
+content-length: 2
 
-0
+50
 ----field----
 field: {56776EDF-261C-4ABC-9FE7-70C618795239}
 name: __Help link
@@ -211,7 +211,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 5a45d57c-0875-4a45-8a1d-2c8c89cd8720
+revision: 617890b6-4cfd-469b-9883-8ef644467354
 
 ----field----
 field: {67B6378B-C9F1-47C7-9CAC-BFA79B0727D9}
@@ -247,14 +247,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5a45d57c-0875-4a45-8a1d-2c8c89cd8720
+617890b6-4cfd-469b-9883-8ef644467354
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 35
+content-length: 16
 
-20150210T175940:635591879807040547Z
+20150901T220615Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

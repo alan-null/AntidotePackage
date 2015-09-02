@@ -1,5 +1,4 @@
 using System.IO;
-using Cognifide.AntidotePackage.Extensions;
 using Cognifide.AntidotePackage.Models;
 
 namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
@@ -10,7 +9,7 @@ namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
         {
             foreach (var item in args.AntidotePackageDefinition.ItemsId)
             {
-                item.SourceStatus = item.ItemId.GetItem() == null ? SourceStatus.New : SourceStatus.Existing;
+                item.SourceStatus = item.GetItem() == null ? SourceStatus.New : SourceStatus.Existing;
             }
 
             foreach (var fileInfo in args.AntidotePackageDefinition.FilesInfo)

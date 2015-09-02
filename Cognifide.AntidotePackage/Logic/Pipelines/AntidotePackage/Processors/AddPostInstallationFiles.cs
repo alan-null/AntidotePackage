@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using Sitecore.Install.Framework;
 using Cognifide.AntidotePackage.Extensions;
+using Sitecore.Install.Framework;
 
 namespace Cognifide.AntidotePackage.Logic.Pipelines.AntidotePackage.Processors
 {
